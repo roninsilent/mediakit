@@ -273,12 +273,12 @@ footer{text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.
 .code:active{transform:scale(.96)}
 @keyframes revela{from{opacity:0;filter:blur(12px);transform:translateY(18px) scale(.95)}to{opacity:1;filter:blur(0);transform:none}}
 @media(prefers-reduced-motion:reduce){.affc:not(.in){opacity:1}.affc.in{animation:none}.affc.in:hover{transform:none}}
-/* logo complet (llamp, anell i nom) en PNG transparent: sense marc, sense rodona i sense fons. Els idiomes, a sobre */
-.brandbar{display:grid;grid-template-columns:auto;justify-content:center;align-items:center;row-gap:0}
-.brandbar .lang{position:static;order:-1;grid-column:1/-1;justify-self:center;width:auto;margin:0 0 14px}
-.brandmark{justify-self:center;width:auto;height:170px;border-radius:0;box-shadow:none;object-fit:contain}
-.brandname{display:none}
-@media(max-width:560px){.brandmark{height:150px}}
+/* logo en horitzontal i compacte: el llamp amb l'anell a l'esquerra i el nom del logo a la dreta, en PNG transparent, sense marc ni fons. Els idiomes, a sobre */
+.brandbar{display:grid;grid-template-columns:1fr auto auto 1fr;justify-content:stretch;align-items:center;column-gap:0;row-gap:0}
+.brandbar .lang{position:static;order:-1;grid-column:1/-1;grid-row:1;justify-self:center;width:auto;margin:0 0 14px}
+.brandmark{grid-column:2;grid-row:2;justify-self:auto;width:auto;height:80px;border-radius:0;box-shadow:none;object-fit:contain}
+.brandname{grid-column:3;grid-row:2;display:block;line-height:0;margin-left:6px}
+.brandname img{display:block;width:auto;height:44px}
 </style>
 </head>
 <body>
@@ -286,8 +286,8 @@ footer{text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.
 
 <header>
   <div class="brandbar">
-    <img class="brandmark" src="logo.png" alt="Zenkai3D Studio" width="346" height="480">
-    <span class="brandname"><b>ZENKAI</b><i>3D STUDIO</i></span>
+    <img class="brandmark" src="logo-llamp.png" alt="" width="229" height="240">
+    <span class="brandname"><img src="logo-nom.png" alt="Zenkai3D Studio" width="353" height="132"></span>
     <div class="lang" id="lang" role="group" aria-label="Language">
       <button type="button" data-l="en" lang="en" title="English">EN</button>
       <button type="button" data-l="es" lang="es" title="Español">ES</button>
